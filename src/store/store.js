@@ -1,7 +1,13 @@
+// CreateStore is the main method to create redux store
+// CombineReducers allows the user to combbine multiple reducers together
+import {configureStore, combineReducers, getDefaultMiddleware} from '@reduxjs/toolkit'
 
-import { createStore, applyMiddleware } from 'redux'; 
-import rootReducer from './rootReducer'; // Create this file
+// Creating store
+let store = configureStore({
+   reducer:{},
+   middleware:(getDefaultMiddleware) => getDefaultMiddleware(),
+   devTools:true
+}) 
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
-
-export default store;
+// Exporting store
+export default store
