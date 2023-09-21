@@ -5,14 +5,18 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+<React.StrictMode>
   <Auth0Provider
   domain="dev-mlxkwbtruscyfbve.us.auth0.com"
   clientId="QWOluch4GoXhaCXb4u9sLV7RazTQxc4z"
+  scope="openid profile email"
   authorizationParams={{
-    redirect_uri: window.location.origin
+    redirect_uri: window.location.origin,
+    audience:"yummydashapi"
   }}
 >
   <App />
-</Auth0Provider>,
+</Auth0Provider>
+</React.StrictMode>,
 );
 
